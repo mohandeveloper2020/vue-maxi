@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue JS</title>
+	<script src="vue.js"></script>
+</head>
+<body>
+
+	<div id="app">
+
+		<h3>For loop of array list</h3>
+		<ul>
+			<li v-for="person in persons"> <!-- can also use 'of' instead of 'in' - person of persons -->
+			{{ person.name }} - {{ person.age }}</li>
+		</ul>
+
+<hr/>
+
+		<h3>index as second argument</h3>
+		<ul>
+			<!-- can add second argument index and call the same way with double curly brackets -->
+			<li v-for="(person, index) in persons"> 
+				{{ person.name }} - index is {{ index }}
+			</li>
+		</ul>
+
+<hr/>
+		<h3>v-for object (value)</h3>
+		<ul>
+			<!-- v-for with object, object's value can be accessed as main-->
+			<li v-for="value in bike">
+				{{ value }}
+			</li>
+		</ul>
+
+<hr/>
+
+		<h3>key and index as optional arguments</h3>		
+		<ul>
+			<!-- key and index can also be accessed as optional arguments -->
+			<li v-for="(value, key, index) in bike">
+				{{ index }} - {{ key }} - {{ value }}
+			</li>
+		</ul>
+
+	</div>
+
+
+	<script>
+		
+		new Vue({
+			el: '#app',
+
+			data: {
+				show: true,
+
+				persons: [
+					{
+						name: 'Mohan',
+						age: 32
+					},
+					{
+						name: 'Raghav',
+						age: 30
+					}
+				],
+
+				bike: {
+					brand: 'Honda',
+					make: '2012',
+					fuel: 'petrol'
+				}
+			}
+		})
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue JS</title>
+	<script src="vue.js"></script>
+</head>
+<body>
+
+	<div id="app">
+		
+		<!-- increment method on click event listener -->
+		<button v-on:click="increment">Click to Increment</button>
+
+		<p>Counter: {{ counter }}</p>
+
+		<p>Clicks: {{ clicks }}</p>
+
+	</div>
+
+
+	<script>
+		
+		new Vue({
+			el: '#app',
+
+			data: {
+				// removed counter, as now its used a computed method
+				clicks: 0
+			},
+
+			methods: {
+				increment(){
+					this.clicks++;
+				}
+			},
+
+			computed: {
+				counter() {
+					return this.clicks * 2;
+					// computed functions should always return something
+					// now counter is dependent on clicks increment method
+				}
+			}
+		})
+
+	</script>
+</body>
+</html>

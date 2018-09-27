@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue JS</title>
+	<script src="vue.js"></script>
+	<style>
+		.red {
+			background-color: red;
+		}
+		.blue {
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="app">
+		
+		<!-- input event handler used and getting the input's target value by event method -->
+		<input type="text" v-on:input="cssClass = $event.target.value">
+
+		<!-- binding class dynamically and its reactive -->
+		<p v-bind:class="[cssClass, 'red']">cssClass: {{ cssClass }}</p>
+
+	</div>
+
+
+	<script>
+		
+		new Vue({
+			el: '#app',
+
+			data: {
+				cssClass: '' // initally empty, updates according to input value from user.
+			}
+		})
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue JS</title>
+	<script src="vue.js"></script>
+</head>
+<body>
+
+	<div id="app">
+		<!-- Changing title by on click event listener -->
+		<button v-on:click="title = 'Hello India!'">
+			Change Title 
+		</button>
+
+		<!-- Changing title by function method -->
+		<button v-on:click="changeTitle">
+			Change Title
+		</button>
+
+		<p>{{ title }}</p> 
+	</div>
+
+
+	<script>
+		
+		new Vue({
+			el: '#app',
+
+			data: {
+				title: 'Hello World!'
+			},
+
+			methods: {
+				changeTitle: function(){
+					this.title = 'Hello Bangalore!' // 'this' refers only to this particular vue instance
+				}
+			}
+		})
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue JS</title>
+	<script src="vue.js"></script>
+</head>
+<body>
+
+	<div id="app">
+		
+		<!-- on click event listener for toggling the show to true or false -->
+		<button v-on:click="show = !show">Show / Hide</button>
+
+		<!-- v-if is used to make visible or not-visible on DOM -->
+		<p v-if="show">I'm part-time visible</p>
+
+		<!-- v-else will be applied when v-if is set to false, and removes from DOM -->
+		<p v-else>Am I visible ?</p>
+
+
+		<!-- v-show does not removes from DOM, instead makes it display: none / block -->
+		<p v-show="show">Hurray! I'm here</p>
+
+	</div>
+
+
+	<script>
+		
+		new Vue({
+			el: '#app',
+
+			data: {
+				show: true,
+
+				persons: [
+					{
+						name: 'Mohan',
+						age: 32
+					},
+					{
+						name: 'Raghav',
+						age: 30
+					}
+				]
+			}
+		})
+
+	</script>
+</body>
+</html>

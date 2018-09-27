@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue JS</title>
+	<script src="vue.js"></script>
+</head>
+<body>
+
+	<div id="app">
+
+		<p>{{ title }}</p>
+
+
+		<!-- custom filter created and its global -->
+		<p>{{ title | uppercase }}</p>
+
+		<p>{{ title | lowercase }}</p>
+
+
+
+		<!-- chaining filters, first uppercase is applied, and then lowercase is applied -->
+		<p>{{ title | uppercase | lowercase }}</p>
+
+
+	</div>
+
+
+	<script>
+
+		Vue.filter('uppercase', function(value){ // default value parameter can be accessed here
+			return value.toUpperCase();
+		});
+
+
+		Vue.filter('lowercase', function(value){ // these filters are global
+			return value.toLowerCase();
+		});
+
+		
+		new Vue({
+			el: '#app',
+
+			data: {
+				title: 'Hello World!'
+			}
+		})
+
+	</script>
+</body>
+</html>

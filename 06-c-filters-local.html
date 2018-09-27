@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue JS</title>
+	<script src="vue.js"></script>
+</head>
+<body>
+
+	<div id="app">
+
+		<p>{{ title }}</p>
+
+
+		<!-- custom filter created and its global -->
+		<p>{{ title | uppercase }}</p>
+
+		<p>{{ title | lowercase }}</p>
+
+
+
+		<!-- chaining filters, first uppercase is applied, and then lowercase is applied -->
+		<p>{{ title | uppercase | lowercase }}</p>
+
+
+<hr/>
+
+		<h3><mark>Note: There is no built-in filters in Vue js, but can create anything by ourself.</mark></h3>
+
+	</div>
+
+
+	<script>
+		
+		new Vue({
+			el: '#app',
+
+			data: {
+				title: 'Hello World!'
+			},
+
+			filters: {
+				uppercase: function(value){ // these filters are local and only accessible for this particular vue instance
+					return value.toUpperCase();
+				},
+
+				lowercase: function(value){
+					return value.toLowerCase();
+				}
+			}
+		})
+
+	</script>
+</body>
+</html>

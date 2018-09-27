@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue JS</title>
+	<script src="vue.js"></script>
+</head>
+<body>
+
+	<div id="app">
+		
+		<!-- increment method on click event listener -->
+		<button v-on:click="increment">Click to Increment</button>
+
+		<p>Counter: {{ counter }}</p>
+
+		<p>Clicks: {{ clicks }}</p>
+
+	</div>
+
+
+	<script>
+		
+		new Vue({
+			el: '#app',
+
+			data: {
+				counter: 0,
+				clicks: 0
+			},
+
+			methods: {
+				increment: function(){
+					this.clicks++;
+					this.counter = this.clicks * 2; // multiplies to 2 from clicks each time buttom clicked
+
+					// counter and clicks updates by increment method, but now counter is dependent on clicks
+
+				}
+			}
+		})
+
+	</script>
+</body>
+</html>

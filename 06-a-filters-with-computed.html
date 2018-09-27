@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue JS</title>
+	<script src="vue.js"></script>
+</head>
+<body>
+
+	<div id="app">
+
+		<p>{{ title }}</p>
+
+
+		<!-- Made uppercase by computed function method -->
+		<p>{{ theTitle }}</p>
+
+	</div>
+
+
+	<script>
+		
+		new Vue({
+			el: '#app',
+
+			data: {
+				title: 'Hello World!'
+			},
+
+			computed: {
+				theTitle: function(){
+					return this.title.toUpperCase();
+				}
+			}
+		})
+
+	</script>
+</body>
+</html>
