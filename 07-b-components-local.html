@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue JS</title>
+	<script src="vue.js"></script>
+	<style>
+		.user {
+			border: 1px solid black;
+			background: #ccc;
+			padding: 10px;
+			margin: 5px 0;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="app">
+
+		<!-- new component created with data and template and its global -->
+		<app-user></app-user>
+
+	</div>
+
+
+	<script>
+		
+		new Vue({
+			el: '#app',
+
+			data: {
+				
+			},
+
+			component: { // locally creating component
+				'app-user' : { // component name
+					data: function(){
+						return {
+							users: [
+								{username: 'Mohan'},
+								{username: 'Dhanu'},
+								{username: 'Raghav'}
+							]
+						}
+					},
+
+					// using template literals (just an another way)
+					template: `
+					<div>
+						<div class="user" v-for="user in users">
+							<p>{{ user.username }}</p>
+						</div>
+					</div>`
+
+				}
+			}
+		})
+
+	</script>
+</body>
+</html>
