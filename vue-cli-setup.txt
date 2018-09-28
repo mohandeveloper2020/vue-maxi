@@ -10,3 +10,20 @@ cd my-project
 npm install
 
 npm run dev
+
+
+It provides the my-project folder with initial setup of vue with webpack and package.json files
+and can be accessed at http://localhost:8081/
+
+
+--------------------------
+
+Just to have initial setup files for understanding, I create a new project folder with name project-1
+with same setup steps
+
+vue init webpack-simple project-1
+cd project-1
+npm install
+npm run dev
+
+can be accessed at http://localhost:8082/
